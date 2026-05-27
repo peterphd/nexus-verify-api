@@ -38,7 +38,7 @@ def dob_match(a: str, b: str) -> bool:
 def verify(request: dict, record: dict) -> dict:
     score = name_similarity(request["name"], record["name"])
 
-    if score >= 0.9 and dob_match(request["dob"], record["dob"]):
+    if score >= 0.95 and dob_match(request["dob"], record["dob"]):
         result = "MATCH"
     elif score >= 0.6:
         result = "PARTIAL"
